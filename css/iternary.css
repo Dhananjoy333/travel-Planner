@@ -1,0 +1,123 @@
+/* Layout & Container Styling */
+.travel-tools-section {
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    background-color: #ededec; /* Slightly cooler tint background matching the screenshot */
+    text-align: center;
+}
+
+.tools-header {
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.tools-sub-heading {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: #c0a273; /* Subtle gold/amber typography color */
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.tools-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 2.8rem;
+    color: #2c3238;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* 3-Column Layout Grid */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Minimalist Cards */
+.tool-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); /* Soft blend shadow */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+}
+
+/* Rounded Icon Badge Boxes */
+.icon-badge {
+    width: 55px;
+    height: 55px;
+    background-color: #f6efe2; /* Soft amber tint box */
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.icon-badge span {
+    font-size: 1.5rem;
+    filter: sepia(0.4) saturate(2) hue-rotate(5deg); /* Modifies emojis to lean into a warmer tone */
+}
+
+/* Card Typography */
+.tool-card-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 1.35rem;
+    color: #2c3238;
+    margin: 0 0 15px 0;
+    font-weight: 500;
+}
+
+.tool-card-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+    color: #6a737d;
+    line-height: 1.6;
+    margin: 0 0 30px 0;
+    flex-grow: 1; /* Pushes the CTA links perfectly down to the bottom grid alignment */
+}
+
+/* Links & CTA */
+.tool-link {
+    font-family: 'Arial', sans-serif;
+    color: #c0a273;
+    font-size: 0.95rem;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    transition: color 0.2s ease;
+}
+
+.tool-link:hover {
+    color: #a48556;
+}
+
+.tool-link .arrow {
+    margin-left: 6px;
+    transition: transform 0.2s ease;
+}
+
+.tool-link:hover .arrow {
+    transform: translateX(4px); /* Tiny interactive micro-movement when hovered */
+}

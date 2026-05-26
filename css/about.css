@@ -1,0 +1,191 @@
+/* Core Footer Reset & Background */
+.main-footer {
+    background-color: #19192b; /* Match your deep dark theme */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+}
+
+/* --- 1. Top Stats Ribbon --- */
+.stats-ribbon {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Clean modern split line */
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+}
+
+.stat-number {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 2.5rem;
+    color: #dfb76c; /* Signature gold highlight color */
+    margin: 0 0 4px 0;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8a8fa3; /* Muted gray for secondary labels */
+    margin: 0;
+}
+
+/* Elegant thin vertical borders between stats */
+.stat-divider {
+    width: 1px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .stats-ribbon {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .stat-divider {
+        display: none; /* Hide dividers on small mobile devices when stacked */
+    }
+}
+
+/* --- 2. Main Footer Navigation Grid --- */
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 20px 50px 20px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Brand Section Styling */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.logo-compass {
+    font-size: 1.4rem;
+}
+
+.footer-logo h2 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 1.6rem;
+    color: #dfb76c;
+    margin: 0;
+    font-weight: 500;
+}
+
+.brand-tagline {
+    font-size: 0.95rem;
+    color: #8a8fa3;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 320px;
+}
+
+/* Menu & Column Headings */
+.column-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #dfb76c;
+    margin: 0 0 25px 0;
+    font-weight: 600;
+}
+
+/* Links Stack */
+.footer-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-links-list a {
+    color: #8a8fa3;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+    width: fit-content;
+}
+
+.footer-links-list a:hover {
+    color: #ffffff;
+    transform: translateX(3px); /* Interactive shift right on hover */
+}
+
+/* --- 3. Social Media Button Badges --- */
+.social-icons-row {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icon-btn {
+    width: 42px;
+    height: 42px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icon-btn span {
+    font-size: 1.1rem;
+    /* Clean monochromatic profile for custom emojis */
+    filter: grayscale(1) brightness(1.3);
+    transition: filter 0.3s ease;
+}
+
+.social-icon-btn:hover {
+    background-color: #dfb76c;
+    transform: translateY(-3px);
+}
+
+.social-icon-btn:hover span {
+    filter: none; /* Brings back vibrant custom emoji shapes/colors when active */
+}
+
+/* Responsive adjustments for footer grid */
+@media (max-width: 900px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: left;
+    }
+}
+
+/* --- 4. Copyright Base Bar --- */
+.footer-bottom {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    color: #5c6175;
+    margin: 0;
+    letter-spacing: 0.5px;
+}

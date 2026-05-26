@@ -1,0 +1,137 @@
+/* Typography & Section Layout */
+.featured-destinations {
+    min-height: 100vh; /* Forces the section to take up full screen height */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers the content inside the 100vh */
+    align-items: center; /* Horizontally centers the content */
+    padding: 60px 40px;
+    background-color: #f7f4eb; /* Soft off-white background */
+    font-family: 'Playfair Display', 'Georgia', serif;
+    text-align: center;
+}
+
+.section-header {
+    margin-bottom: 40px; /* Reduced slightly to comfortably fit elements on smaller screens */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sub-heading {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: #c5a880;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-family: 'Arial', sans-serif;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    color: #1a2530;
+    margin: 0 0 12px 0;
+    font-weight: 500;
+}
+
+.section-description {
+    font-size: 1.05rem;
+    color: #6a7682;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+/* Cards Grid Layout */
+.cards-grid {
+    display: grid;
+    /* Grid switches cleanly between desktop and mobile viewport space */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Destination Cards */
+.destination-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Visual Header (Gradients matched to image) */
+.card-image-wrapper {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.card-emoji {
+    font-size: 3.5rem;
+    /* Optional: Soft shadows behind emojis to mimic the minimalist illustration look */
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+/* Gradients */
+.gradient-goa {
+    background: linear-gradient(135deg, #ff9e59, #ee6c4d);
+}
+
+.gradient-kerala {
+    background: linear-gradient(135deg, #4fa14f, #1e7f34);
+}
+
+.gradient-paris {
+    background: linear-gradient(135deg, #6c7cd4, #3f51b5);
+}
+
+.gradient-bali {
+    background: linear-gradient(135deg, #e05295, #b81d61);
+}
+
+/* Card Bottom Content Area */
+.card-content {
+    padding: 24px;
+    font-family: 'Arial', sans-serif; /* Clean sans-serif font for descriptive text */
+}
+
+.card-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 1.4rem;
+    color: #1a2530;
+    margin: 0 0 8px 0;
+    font-weight: 500;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #6a7682;
+    line-height: 1.4;
+    margin: 0 0 20px 0;
+    min-height: 40px; /* Ensures text blocks stay uniform even with variations in length */
+}
+
+/* Country Tags */
+.country-tag {
+    display: inline-block;
+    background-color: #f1ede4;
+    color: #7d7568;
+    font-size: 0.75rem;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+}

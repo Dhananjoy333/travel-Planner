@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelEase - AI Itinerary Planner</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/planner.css">
+</head>
+<body>
+<header>
+    <a href="home.html" style="text-decoration: none;">
+        <div class="logo-container">
+            <div class="logo-icon">🧭</div>
+            <div class="logo-text">TravelEase</div>
+        </div>
+    </a>
+    <nav>
+        <a href="home.html" class="active">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="iternary.html">Itinerary</a>
+        <a href="#">Guides <span class="dropdown-icon">▼</span></a>
+        <a href="about.html">About</a>
+    </nav>
+    <div class="search-container">
+        <input type="text" class="search-bar" aria-label="Search">
+        <button class="search-button" aria-label="Submit Search">🔍</button>
+    </div>
+</header>
+
+<main class="planner-container">
+    <aside class="planner-sidebar" id="plannerSidebar">
+        <div class="sidebar-header">
+            <h3>AI Assistant</h3>
+            <p>Configure your preferences before planning your journey.</p>
+        </div>
+
+        <div class="control-group">
+            <label for="paceSelect">Travel Pace</label>
+            <select id="paceSelect">
+                <option value="relaxed">Relaxed & Casual</option>
+                <option value="balanced" selected>Balanced Sightseeing</option>
+                <option value="packed">Fast-Paced & Packed</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="budgetSelect">Budget Level</label>
+            <select id="budgetSelect">
+                <option value="budget">Budget / Backpacker</option>
+                <option value="midrange" selected>Mid-range Comfort</option>
+                <option value="luxury">Luxury / Premium</option>
+            </select>
+        </div>
+
+        <button class="clear-chat-btn" id="clearChatBtn">🧹 Clear Conversation</button>
+    </aside>
+
+    <section class="chat-wrapper">
+        <div class="mobile-header">
+            <button class="menu-toggle-btn" id="menuToggleBtn" aria-label="Toggle Preferences">
+                ☰ <span>Preferences</span>
+            </button>
+            <h3 class="mobile-title">AI Travel Companion</h3>
+        </div>
+
+        <div class="chat-timeline" id="chatTimeline">
+            <div class="msg bot-msg">
+                <div class="msg-avatar">🤖</div>
+                <div class="msg-bubble">
+                    <p>Hello! I am your AI Travel Companion. Where would you like to travel, for how long, and what experiences are you looking for?</p>
+                    <small class="msg-timestamp">Just Now</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-input-panel">
+            <form id="chatForm" class="input-form-row">
+                <input
+                        type="text"
+                        id="userInput"
+                        placeholder="e.g., Plan a 4-day culture and food itinerary for Kyoto, Japan..."
+                        autocomplete="off"
+                        required
+                >
+                <button type="submit" class="send-btn" id="sendBtn">
+                    <span>✨</span> Ask AI
+                </button>
+            </form>
+        </div>
+    </section>
+</main>
+<script src="js/planner.js"></script>
+</body>
+</html>
