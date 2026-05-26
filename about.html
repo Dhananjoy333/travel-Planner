@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelEase - Your Smart Travel Companion</title>
+    <link rel="stylesheet" href="css/transition.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-
+<div class="page-transition-overlay" id="transitionOverlay">
+    <div class="flying-airplane">
+        <img src="assets/plane.png" alt="flying-airplane">
+    </div>
+</div>
 <header>
     <a href="index.html" style="text-decoration: none;">
         <div class="logo-container">
@@ -67,22 +73,22 @@
         <div class="footer-column links-navigation">
             <h4 class="column-title">Quick Links</h4>
             <nav class="footer-links-list">
-                <a href="#">Home</a>
-                <a href="#">Destination Discovery</a>
-                <a href="#">Itinerary Planner</a>
+                <a href="index.html">Home</a>
+                <a href="explore.html">Destination Discovery</a>
+                <a href="iternary.html">Itinerary Planner</a>
                 <a href="#">Domestic Guides</a>
                 <a href="#">International Guides</a>
-                <a href="#">About</a>
+                <a href="about.html">About</a>
             </nav>
         </div>
 
         <div class="footer-column social-connections">
             <h4 class="column-title">Follow Us</h4>
             <div class="social-icons-row">
-                <a href="#" class="social-icon-btn" aria-label="Facebook"><span>📘</span></a>
-                <a href="#" class="social-icon-btn" aria-label="Instagram"><span>📸</span></a>
-                <a href="#" class="social-icon-btn" aria-label="Twitter"><span>🐦</span></a>
-                <a href="#" class="social-icon-btn" aria-label="YouTube"><span>📺</span></a>
+                <a href="#" class="social-icon-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon-btn" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" class="social-icon-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </div>
@@ -91,6 +97,6 @@
         <p>&copy; 2026 TravelEase | Developed by Devika Boro, NIELIT Kokrajhar EC</p>
     </div>
 </footer>
-
+<script src="js/transition.js"></script>
 </body>
 </html>
