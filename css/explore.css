@@ -13,7 +13,7 @@
 }
 
 .section-header {
-    margin-bottom: 40px; /* Reduced slightly to comfortably fit elements on smaller screens */
+    margin-bottom: 40px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -47,7 +47,6 @@
 /* Cards Grid Layout */
 .cards-grid {
     display: grid;
-    /* Grid switches cleanly between desktop and mobile viewport space */
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 30px;
     width: 100%;
@@ -70,23 +69,40 @@
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
-/* Card Visual Header (Gradients matched to image) */
+.destination-card-link {
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Card Visual Header (Container for the images) */
 .card-image-wrapper {
     height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    overflow: hidden;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
-.card-emoji {
-    font-size: 3.5rem;
-    /* Optional: Soft shadows behind emojis to mimic the minimalist illustration look */
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+/* New: Styled Image configuration */
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps image proportions without stretching */
+    display: block;
+    opacity: 0.85; /* Allows the background gradient to slightly tint the image */
+    mix-blend-mode: multiply; /* Blends photo seamlessly with your underlying UI gradients */
+    transition: transform 0.3s ease;
 }
 
-/* Gradients */
+/* Zoom effect on card hover */
+.destination-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+/* Gradients (Acts as fallback / background tinting) */
 .gradient-goa {
     background: linear-gradient(135deg, #ff9e59, #ee6c4d);
 }
@@ -106,7 +122,7 @@
 /* Card Bottom Content Area */
 .card-content {
     padding: 24px;
-    font-family: 'Arial', sans-serif; /* Clean sans-serif font for descriptive text */
+    font-family: 'Arial', sans-serif;
 }
 
 .card-title {
@@ -122,7 +138,7 @@
     color: #6a7682;
     line-height: 1.4;
     margin: 0 0 20px 0;
-    min-height: 40px; /* Ensures text blocks stay uniform even with variations in length */
+    min-height: 40px;
 }
 
 /* Country Tags */

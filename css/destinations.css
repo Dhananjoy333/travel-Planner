@@ -1,0 +1,428 @@
+/* --- RESET & ROOT VARIABLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-gradient: radial-gradient(circle at top left, #1c151d 0%, #110d12 40%, #09070a 100%);
+    --card-bg: rgba(36, 32, 39, 0.65);
+    --card-border: rgba(255, 255, 255, 0.04);
+    --text-main: #ffffff;
+    --text-muted: #9e99a2;
+    --accent-gold: #ddb67d;
+    --btn-bg: #dfba8c;
+    --btn-text: #221a15;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+}
+
+/* Shared background layout styles for ALL pages */
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: var(--text-main);
+    font-family: var(--font-sans), serif;
+    min-height: 100vh;
+    padding: 3rem 2rem;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Page-specific Image Layers */
+body.bg-goa {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../assets/backgrounds/goa.png');
+}
+
+body.bg-bali {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../assets/backgrounds/bali.png');
+}
+
+body.bg-kerala {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../assets/backgrounds/kerala.png');
+}
+
+body.bg-paris {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../assets/backgrounds/paris.png');
+}
+
+/* --- HEADER --- */
+.hero-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    position: relative;
+}
+
+.hero-header h1 {
+    font-family: var(--font-serif), serif;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.hero-header h1 span {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent-gold);
+}
+
+.hero-header .subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.map-view-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-main);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.map-view-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* --- MAIN LAYOUT --- */
+.dashboard-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 0.8fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+@media (max-width: 1100px) {
+    .dashboard-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- COLUMNS & HEADINGS --- */
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.column h2 {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #efedf0;
+    letter-spacing: 0.3px;
+    margin-bottom: 0.5rem;
+}
+
+/* --- GENERAL CARD BASE --- */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* --- HOTEL CARDS (HORIZONTAL layout) --- */
+.hotel-card {
+    display: flex;
+    height: 140px;
+    min-height: 140px;
+    flex-shrink: 0;
+}
+
+.hotel-card .card-img {
+    width: 120px;
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+    border-radius: 12px;
+    margin: 10px;
+}
+
+.hotel-card .card-content {
+    flex-grow: 1;
+    padding: 12px 16px 12px 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-header h3 {
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.price-tier {
+    color: var(--accent-gold);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.tagline {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: -4px;
+}
+
+.badge-group {
+    display: flex;
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #cccccc;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.72rem;
+}
+
+.primary-btn {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    width: 100%;
+    padding: 8px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.82rem;
+    cursor: pointer;
+    text-align: center;
+    transition: opacity 0.2s ease;
+}
+
+.primary-btn:hover {
+    opacity: 0.9;
+}
+
+/* --- SCROLLABLE CONTAINER FOR CARDS --- */
+.scroll-container {
+    max-height: 540px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding-right: 4px;
+
+    /* Modern minimalist scrollbar behavior for Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+/* Custom sleek scrollbar for Chrome, Safari, and Edge */
+.scroll-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* --- LANDMARK CARDS (GRID layout) --- */
+.landmarks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.full-width-landmark {
+    grid-column: span 2;
+}
+
+.landmark-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.landmark-img {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 12px;
+}
+
+.save-itinerary {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(15, 12, 17, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    color: var(--text-main);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.landmark-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-grow: 1;
+}
+
+.landmark-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.landmark-title-row h3 {
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.pin-icon {
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-gold);
+}
+
+.landmark-body p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* --- DINING & CULTURE CARDS (TEXTLIST layout) --- */
+.text-list-card {
+    padding: 20px;
+}
+
+.text-list-card h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.list-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 12px 0;
+}
+
+.list-item h4 {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #e5e2e6;
+    margin-bottom: 2px;
+}
+
+.list-item p {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.no-border {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Decorative background flare star */
+.decorative-flare {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    font-size: 3.5rem;
+    color: rgba(255, 255, 255, 0.15);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* --- BOTTOM GO BACK BUTTON --- */
+.bottom-actions-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 3.5rem 0 1.5rem 0;
+}
+
+.go-back-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: #efedf0;
+    padding: 0.75rem 2rem;
+    border-radius: 25px;
+    font-family: var(--font-sans), serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.go-back-btn svg {
+    transition: transform 0.2s ease;
+}
+
+/* Subtle interactive hover states */
+.go-back-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.go-back-btn:hover svg {
+    transform: translateX(-4px);
+}
+
+.go-back-btn:active {
+    transform: scale(0.97);
+}
