@@ -5,8 +5,11 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Enable CORS so your frontend can communicate with this backend
-app.use(cors());
+// restrict cors to only accept from specific url
+app.use(cors({
+    origin: "https://travel-ease123.netlify.app"
+}));
+
 // Parse incoming JSON payloads
 app.use(express.json());
 

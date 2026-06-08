@@ -1,5 +1,5 @@
 
-const API_URL = "http://localhost:3000/api/plan-itinerary";
+const API_URL = "https://travel-planner-gkib.onrender.com/api/plan-itinerary";
 
 document.addEventListener("DOMContentLoaded", () => {
     const chatForm = document.getElementById("chatForm");

@@ -10,7 +10,6 @@
     text-align: center;
     padding: 40px 20px 80px 20px;
     
-    /* Background Settings - works well if hero-bg.png is white/light */
     background-image: url("../assets/backgrounds/hero-bg.png");
     background-size: cover;  
     background-position: center;  
@@ -19,7 +18,7 @@
     overflow: hidden;
 }
 
-/* Ensure typography and buttons stack safely */
+
 .tagline, .main-title, .description, .cta-container {
     position: relative;
     transform: translate(-110px,-20px);
@@ -30,7 +29,7 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 12px;
     letter-spacing: 4px;
-    color: #8c6d53; /* Darkened for better contrast */
+    color: #8c6d53; 
     text-transform: uppercase;
     margin-bottom: 25px;
     font-weight: 600;
@@ -45,11 +44,11 @@
 }
 
 .main-title .white-text {
-    color: #171624; /* Changed from white to a deep dark blue/charcoal */
+    color: #171624;
 }
 
 .main-title .gold-text {
-    color: #bfa054; /* Darkened slightly for contrast against white */
+    color: #bfa054;
     font-style: italic;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -57,7 +56,7 @@
 .description {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 15px;
-    color: #4a4950; /* Changed from light gray to readable dark slate gray */
+    color: #4a4950;
     max-width: 600px;
     line-height: 1.6;
     margin-bottom: 40px;
@@ -85,8 +84,8 @@
 }
 
 .btn-primary {
-    background-color: #bfa054; /* Match dark gold */
-    color: #ffffff; /* Text is now white inside the dark gold button */
+    background-color: #bfa054; 
+    color: #ffffff; 
     border: 1px solid #bfa054;
 }
 
@@ -96,9 +95,9 @@
 }
 
 .btn-secondary {
-    background-color: rgba(23, 22, 36, 0.05); /* Tinted with dark color */
+    background-color: rgba(23, 22, 36, 0.05); 
     color: #171624; /* Dark text */
-    border: 1px solid rgba(23, 22, 36, 0.3); /* Darker border */
+    border: 1px solid rgba(23, 22, 36, 0.3); 
 }
 
 .btn-secondary:hover {
@@ -108,8 +107,8 @@
 /* Responsive Design */
 @media (max-width: 1366px) {
     .hero {
-        padding-right: 19%; /* Pushes the text safely into the empty sky area */
-        background-position: 35% center; /* Tweaks the background position slightly */
+        padding-right: 19%;
+        background-position: 35% center;
     }
 
     .main-title {
@@ -121,7 +120,7 @@
     }
     
     .description {
-        color: #33323a; /* Darkened for sky contrast */
+        color: #33323a; 
         margin-left: 0;
         font-weight: 600;
     }
@@ -132,8 +131,8 @@
 
 @media (max-width: 768px) {
     .hero {
-        background-position: center top; /* Focuses on the top of the image for vertical mobile screens */
-        padding: 60px 20px;              /* Adjusts padding for a tighter mobile layout */
+        background-position: center top;
+        padding: 60px 20px;              
     }
     header {
         padding: 20px;
