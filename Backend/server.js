@@ -7,9 +7,8 @@ const PORT = process.env.PORT || 3000;
 
 // restrict cors to only accept from specific url
 app.use(cors({
-    origin: "https://travel-ease123.netlify.app"
+    origin: "https://travel-book123.netlify.app"
 }));
-
 // Parse incoming JSON payloads
 app.use(express.json());
 
@@ -24,7 +23,7 @@ app.post('/api/plan-itinerary', async (req, res) => {
         }
 
         // Construct the structured prompt safely on the server side
-        const structuredSystemPrompt = `You are a professional travel assistant agent inside the TravelEase ecosystem. 
+        const structuredSystemPrompt = `You are a professional travel assistant agent inside the TravelBook ecosystem. 
 The traveler is asking for: "${query}". 
 Incorporate these parameters into your recommendation details:
 - Budget Style: ${budget}
