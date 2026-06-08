@@ -1,0 +1,163 @@
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    flex: 1;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px 80px 20px;
+    
+    /* Background Settings - works well if hero-bg.png is white/light */
+    background-image: url("../assets/backgrounds/hero-bg.png");
+    background-size: cover;  
+    background-position: center;  
+    background-repeat: no-repeat;  
+    background-attachment: scroll; 
+    overflow: hidden;
+}
+
+/* Ensure typography and buttons stack safely */
+.tagline, .main-title, .description, .cta-container {
+    position: relative;
+    transform: translate(-110px,-20px);
+    z-index: 2;
+}
+
+.tagline {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #8c6d53; /* Darkened for better contrast */
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.main-title {
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.main-title .white-text {
+    color: #171624; /* Changed from white to a deep dark blue/charcoal */
+}
+
+.main-title .gold-text {
+    color: #bfa054; /* Darkened slightly for contrast against white */
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.description {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 15px;
+    color: #4a4950; /* Changed from light gray to readable dark slate gray */
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+/* Button CTA Styles */
+.cta-container {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 14px;
+    padding: 12px 28px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #bfa054; /* Match dark gold */
+    color: #ffffff; /* Text is now white inside the dark gold button */
+    border: 1px solid #bfa054;
+}
+
+.btn-primary:hover {
+    background-color: #a38541;
+    border-color: #a38541;
+}
+
+.btn-secondary {
+    background-color: rgba(23, 22, 36, 0.05); /* Tinted with dark color */
+    color: #171624; /* Dark text */
+    border: 1px solid rgba(23, 22, 36, 0.3); /* Darker border */
+}
+
+.btn-secondary:hover {
+    background-color: rgba(23, 22, 36, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1366px) {
+    .hero {
+        padding-right: 19%; /* Pushes the text safely into the empty sky area */
+        background-position: 35% center; /* Tweaks the background position slightly */
+    }
+
+    .main-title {
+        font-size: 56px;
+    }
+
+    .cta-container {
+        justify-content: flex-start;
+    }
+    
+    .description {
+        color: #33323a; /* Darkened for sky contrast */
+        margin-left: 0;
+        font-weight: 600;
+    }
+    .tagline, .main-title, .description, .cta-container {
+    transform: translate(0,0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background-position: center top; /* Focuses on the top of the image for vertical mobile screens */
+        padding: 60px 20px;              /* Adjusts padding for a tighter mobile layout */
+    }
+    header {
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .main-title {
+        font-size: 44px;
+    }
+    .cta-container {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 280px;
+    }
+    .btn {
+        justify-content: center;
+    }
+    .tagline, .main-title, .description, .cta-container {
+    transform: translate(0,-30);
+    }
+}

@@ -1,6 +1,5 @@
-// WARNING: For production environments, hide your keys using an environment variable backend server proxy.
-const GEMINI_API_KEY = "";
-const API_URL = ``;
+
+const API_URL = "http://localhost:3000/api/plan-itinerary";
 
 document.addEventListener("DOMContentLoaded", () => {
     const chatForm = document.getElementById("chatForm");
@@ -13,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuToggleBtn = document.getElementById("menuToggleBtn");
     const plannerSidebar = document.getElementById("plannerSidebar");
 
-    // Fix: Targeted the correct ID from the HTML configuration
     const overlay = document.getElementById("transitionOverlay");
     if (overlay) {
         setTimeout(() => overlay.classList.add("is-hidden"), 200);
@@ -50,31 +48,20 @@ document.addEventListener("DOMContentLoaded", () => {
         const pace = document.getElementById("paceSelect").value;
         const budget = document.getElementById("budgetSelect").value;
 
-        // Build system architecture prompt modifier for tailored results
-        const structuredSystemPrompt = `You are a professional travel assistant agent inside the TravelEase ecosystem. 
-        The traveler is asking for: "${query}". 
-        Incorporate these parameters into your recommendation details:
-        - Budget Style: ${budget}
-        - Travel Intensity Pace: ${pace}.
-        Format your response cleanly with brief line breaks where appropriate. Do not use complex raw markdown syntax blocks like hashes, keep it clear and easy to read.`;
-
-        console.log(structuredSystemPrompt);
-
         // 3. Render Loading Indicator
         const loadingId = appendMessage('<div class="typing-dots">Thinking<span>.</span><span>.</span><span>.</span></div>', "bot");
 
         try {
             sendBtn.disabled = true;
 
+            // Send raw clean traits to backend proxy API securely
             const response = await fetch(API_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    contents: [{
-                        parts: [{
-                            text: structuredSystemPrompt
-                        }]
-                    }]
+                    query: query,
+                    budget: budget,
+                    pace: pace
                 })
             });
 
@@ -84,11 +71,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const loadingEl = document.getElementById(loadingId);
             if (loadingEl) loadingEl.remove();
 
-            // Extract content safely from payload map
+            // Extract content safely from payload map sent from backend proxy logic
             if (data.candidates && data.candidates[0].content?.parts?.[0]?.text) {
                 let aiResponseText = data.candidates[0].content.parts[0].text;
 
-                // Extra safety: Minimal formatting handler to replace residual asterisks with html tags
+                // Minimal formatting handler to replace residual asterisks with html tags
                 let cleanedText = aiResponseText
                     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                     .replace(/\*(.*?)\*/g, '<em>$1</em>')
@@ -100,10 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
         } catch (error) {
-            console.error("API Communication Error:", error);
+            console.error("Communication Error:", error);
             const loadingEl = document.getElementById(loadingId);
             if (loadingEl) loadingEl.remove();
-            appendMessage("Unable to reach the AI servers right now. Please verify your internet connection or API Key.", "bot");
+            appendMessage("Unable to reach the backend servers right now. Please verify your connection.", "bot");
         } finally {
             sendBtn.disabled = false;
         }
@@ -119,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         const avatar = sender === "user" ? "👤" : "🤖";
 
-        // Note: innerHTML updated to hold custom formatted strings or raw user texts safely
         msgDiv.innerHTML = `
             <div class="msg-avatar">${avatar}</div>
             <div class="msg-bubble">
